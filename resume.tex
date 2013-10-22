@@ -1,0 +1,108 @@
+\documentclass[11pt, oneside]{article}
+\usepackage{geometry}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\pagestyle{empty}
+\geometry{letterpaper, tmargin=.5in, bmargin=.5in, lmargin=.5in, rmargin=.5in, headheight=0in, headsep=0in, footskip=.3in}
+
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+%\renewcommand*{\sfdefault}{helvet}
+\renewcommand*{\familydefault}{\sfdefault}
+
+
+
+\newcommand{\lr}[2]{#1\hfill#2}
+
+\newcommand{\name}{Nathan M. Rosenbloom}
+\newcommand{\addr}{MB 2588 - 415 South Street - Waltham, MA 02453}
+\newcommand{\phone}{(785) 393-9367}
+\newcommand{\email}{nrosenbloom@brandeis.edu}
+
+\newcommand{\resname}[4]{
+  \begin{center}
+    \selectfont\huge\scshape #1
+    \normalfont
+    \footnotesize
+    \itshape
+    \rule{\textwidth}{1pt}
+    #2 $\bullet$ #3 $\bullet$ #4
+    \normalfont
+  \end{center}
+}
+
+\newcommand{\reseducation}[5]{
+  \begin{ressection}{Education}
+  \item[] \lr{\bfseries \selectfont #1\normalfont} {Expected: #2}
+nnn    \vspace{-8pt}
+    \begin{itemize} \itemsep-2pt
+      \item[] \textsl{Majors: }#4
+      \item[] \textsl{Minors: }#5
+      \item[] \textsl{GPA: }#3
+    \end{itemize}
+  \end{ressection}
+}
+\newcommand{\skills}[1]{
+\item[] \textsl{Skills:} #1
+}
+
+\newenvironment{ressection}[1]{
+  \section{\normalsize \scshape \selectfont #1 \normalfont}
+  \vspace{-4pt}
+  \begin{itemize} \itemsep-2pt
+}{
+  \end{itemize}
+  \vspace{-20pt}
+}
+
+\newenvironment{resitem}[4]{
+\item[] \lr{\bfseries \selectfont #1 \normalfont, #2} {#3}
+\item[] \textsl{#4}
+  \vspace{-4pt}
+  \begin{itemize} \itemsep-2pt
+}{
+  \end{itemize}
+}
+
+\begin{document}
+\resname{\name}{\addr}{\phone}{\email}
+\setcounter{secnumdepth}{-1} %disables section numbering
+\reseducation{Brandeis University}{May 2014}{3.373}{BS Computer Science, Mathematics}{Theater Arts, Latin}
+\begin{ressection}{Experience}
+  \begin{resitem}{B-Line Medical}{Washington, D.C.}{June-August 2013}{Software Development Intern}
+  \item Developed a User Interface for camera controls, including Pan/Tilt/Zoom, Presets,Privacy Mode and Audio Paging to an existing web application, using Flex/Actionscript
+  \item Defined a C\# interface, called by a flash application, to control cameras using a custom AMX/Cresteron Protocol
+  \item Implemented, in C\#, a protocol to add Pan/Tilt/Zoom, Preset, and Privacy commands for Axis IP cameras using their VAPIX api
+    \skills{C\#, Flex, Actionscript, SVN, Visual Studio,Intellij}
+  \end{resitem}
+  \begin{resitem}{Innermost Labs}{Waltham, MA}{April 2012-September 2012}{Developer}
+  \item Developed an Android application for the Rootscamp 2012 Conference using HTML, Javascript  and Trigger.io
+  \item Added map functionality using the google maps Javascript API
+    \skills{Javascript, Git, Firebase, Trigger.io}
+  \end{resitem}
+  \begin{resitem}{Brand New School}{New York, NY}{June 2011-August 2011}{Interactive Intern}
+  \item Developed interactive applications with processing
+  \item Created a system to import payroll data files (formatted as a csv) into a QuickBooks readable format
+    \skills{Java, SVN, Processing}
+  \end{resitem}
+  \begin{resitem}{Library and Technology Services}{Waltham, MA}{May 2011-Present}{L.T.S. Technician} 
+  \item Provides phone, walk-up and on-site support for the students, faculty, and staff of Brandeis University
+  \item Supports Google Apps products, shared Windows drives, network access, antivirus, and general software support 
+    \skills{Operating Systems: Windows, Mac, Linux (Arch, Ubuntu)}
+  \end{resitem}
+\end{ressection}
+\begin{ressection}{Leadership Experience}
+  \begin{resitem}{The Brandeis Hoot}{Brandeis University- Waltham, MA}{January 2012-September 2013}{Photography Editor}
+  \item Organized photo scavenger hunts and outings
+  \item Provided instruction on manual camera operations, developing negatives and prints. 
+  \end{resitem}
+  \begin{resitem}{Brandeis Emergency Medical Corps}{Brandeis University- Waltham, MA}{September 2011-Present}{EMT B}
+  \item Provided volunteer emergency medical response as a non-transporting ambulance service to approximately 5,000 members of the Brandeis Community 
+  \end{resitem}
+  \end{ressection}
+\end{document}

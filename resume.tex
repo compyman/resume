@@ -3,6 +3,9 @@
 \usepackage{helvet}
 \usepackage[T1]{fontenc}
 \pagestyle{empty}
+\usepackage{multicol}
+\errorcontextlines 10000
+
 \geometry{letterpaper, tmargin=.5in, bmargin=.5in, lmargin=.5in, rmargin=.5in, headheight=0in, headsep=0in, footskip=.3in}
 
 
@@ -12,7 +15,7 @@
 \setlength{\topsep}{0in}
 \setlength{\tabcolsep}{0in}
 
-%\renewcommand*{\sfdefault}{helvet}
+% \renewcommand*{\sfdefault}{helvet}
 \renewcommand*{\familydefault}{\sfdefault}
 
 
@@ -41,9 +44,9 @@
   \item[] \lr{\bfseries \selectfont #1\normalfont} {Expected #2}
     \vspace{-8pt}
     \begin{itemize} \itemsep-2pt
-      \item[] #4
-      \item[] \textsl{Minors: }#5
-      \item[] \textsl{GPA: }#3
+    \item[] #4
+    \item[] \textsl{Minors: }#5
+    \item[] \textsl{GPA: }#3
     \end{itemize}
   \end{ressection}
 }
@@ -55,7 +58,7 @@
   \section{\normalsize \scshape \selectfont #1 \normalfont}
   \vspace{-4pt}
   \begin{itemize} \itemsep-2pt
-}{
+  }{
   \end{itemize}
   \vspace{-20pt}
 }
@@ -65,14 +68,45 @@
 \item[] \textsl{#4}
   \vspace{-4pt}
   \begin{itemize} \itemsep-2pt
-}{
+  }{
   \end{itemize}
 }
+
+\newenvironment{resclasses}
+{
+  \section{\normalsize \scshape \selectfont Relevant Courses \normalfont}
+  \normalfont
+  \vspace{-12pt}
+  \begin{flushleft}
+  \begin{multicols}{3}
+    \begin{itemize} \itemsep -3pt
+      }{
+      \end{itemize}
+    \end{multicols}
+    \end{flushleft}
+  \vspace{-20pt}
+}
+
 
 \begin{document}
 \resname{\name}{\addr}{\phone}{\email}
 \setcounter{secnumdepth}{-1} %disables section numbering
+ 
 \reseducation{Brandeis University}{May 2014}{3.373}{Bachelors of Science Computer Science, Mathematics}{Theater Arts, Latin}
+\begin{resclasses}
+\item Linear Algebra
+\item Data Structures and Algorithms
+\item Discrete Structures
+\item Database Management Systems
+\item Introduction to Theory of Computation
+\item Structure and Interpretation of Computer Programs
+\item Operating Systems
+\item Fundamentals of Artificial Intelligence
+\item Computer System Design
+\item Introduction to Programming Language Theory
+\item Distributed Systems (Spring 2014)
+\end{resclasses}
+
 \begin{ressection}{Experience}
   \begin{resitem}{B-Line Medical}{Washington, D.C.}{June 2013-August 2013}{Software Development Intern}
   \item Developed a User Interface for camera controls, including Pan/Tilt/Zoom, Presets, Privacy Mode and Audio Paging to an existing web application, in Flex/Actionscript
@@ -89,12 +123,14 @@
   \item Programmed interactive applications using the Processing langauge
   \item Created a system to import payroll data files (formatted as a csv) into a QuickBooks readable format
     \skills{Java, SVN, Processing}
+    \begin{resitem}{Library and Technology Services}{Brandeis University- Waltham, MA}{May 2011-Present}{L.T.S. Helpdesk Technician} 
+    \item Offer phone, walk-up and on-site support for the students, faculty, and staff of Brandeis University
+    \item Support Google Apps products, shared Windows drives, network access, antivirus, and general software support 
+      \skills{Operating Systems: Windows, Mac, Linux (Arch, Ubuntu)}
+    \end{resitem}
+    
   \end{resitem}
-  \begin{resitem}{Library and Technology Services}{Brandeis University- Waltham, MA}{May 2011-Present}{L.T.S. Helpdesk Technician} 
-  \item Offer phone, walk-up and on-site support for the students, faculty, and staff of Brandeis University
-  \item Support Google Apps products, shared Windows drives, network access, antivirus, and general software support 
-    \skills{Operating Systems: Windows, Mac, Linux (Arch, Ubuntu)}
-  \end{resitem}
+
 \end{ressection}
 \begin{ressection}{Leadership Experience}
   \begin{resitem}{Brandeis Photography Club}{Waltham, MA}{September 2011-Present}{President}
@@ -105,5 +141,5 @@
   \item Provide volunteer emergency medical service at the EMT-Basic level to approximately 5,000 members of the Brandeis Community
   \item Maintain the BEMCo website, organize EMT coverage for on campus events, and customize the MATRIS online Patient Care Report service for BEMCo specific requirements
   \end{resitem}
-  \end{ressection}
+\end{ressection}
 \end{document}

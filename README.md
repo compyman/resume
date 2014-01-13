@@ -15,7 +15,7 @@ reseducation: a shortcut for an information ressection:
 			GPA
 			Major(s)
 			Minor(s) {Will need to change if only one/no minors}
-
+			Honors
 skills: prepends and '\item[]  skills' in italics to a list of skills, 
 
 

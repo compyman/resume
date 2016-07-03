@@ -18,12 +18,9 @@
 % \renewcommand*{\sfdefault}{helvet}
 \renewcommand*{\familydefault}{\sfdefault}
 
-
-
 \newcommand{\lr}[2]{#1\hfill#2}
-
 \newcommand{\name}{Nathan M. Rosenbloom}
-\newcommand{\addr}{1519 Park Rd NW - Washington, D.C. 20010}
+\newcommand{\addr}{11 Elmwood St - Somerville, MA 02144-2407}
 \newcommand{\phone}{(785) 393-9367}
 \newcommand{\email}{nate.rosenbloom@gmail.com}
 
@@ -38,7 +35,6 @@
     \normalfont
   \end{center}
 }
-
 \newcommand{\reseducation}[6]{
   \begin{ressection}{Education}
   \item[] \lr{\bfseries \selectfont #1\normalfont} {#2}
@@ -73,28 +69,50 @@
   \end{itemize}
 }
 
-\newenvironment{resclasses}
+\newenvironment{reslist}[1]
 {
-  \section{\normalsize \scshape \selectfont Relevant Courses \normalfont}
+  \section{\normalsize \scshape \selectfont #1  \normalfont}
   \normalfont
   \vspace{-12pt}
   \begin{flushleft}
-  \begin{multicols}{3}
-    \begin{itemize} \itemsep -3pt
+    \begin{multicols}{3}
+      \begin{itemize} \itemsep -3pt
       }{
       \end{itemize}
     \end{multicols}
-    \end{flushleft}
+  \end{flushleft}
   \vspace{-20pt}
 }
-
-
 \begin{document}
 \resname{\name}{\addr}{\phone}{\email}
 \setcounter{secnumdepth}{-1} %disables section numbering
- 
+
+\begin{ressection}{Experience}
+  \begin{resitem}{HubSpot}{Cambridge, MA}{June 2015-Present}{Software Engineer}
+  \item Implemented analytics/usage tracking backend, ingestion - using kafka streams inspired by lambda architecture, and a web interface to query data in redshift
+  \item Re-wrote the marketplace HubSpot customers can use to buy and sell website, blog \& email templates, including re-engineering the data models \& database schema, web endpoints, template creation and delivery, and performance as well as work to expand the marketplace to offer other products in the HubSpot ecosystem
+    \skills{Git, Java 8, Redshift, Kafka, MySql}
+  \end{resitem}
+  \begin {resitem}{B-Line Medical}{Washington, D.C.}{July 2014-May 2015}{Software Engineer} 
+  \item Implemented bilinear image resizing in a C++ live video recording and streaming application
+  \item Added a new question type based on the USMLE format to Flex UI, along with other bug fixes and small features
+  \item Maintained and implemented features  C\# web backend
+    \skills{Agile, Git \& SVN, C\#, C++, Actionscript/Flex, SQL, DirectShow}
+  \end{resitem}
+  \begin{resitem}{B-Line Medical}{Washington, D.C.}{June 2013-August 2013}{Software Development Intern}
+  \item Devloped a User Interface for camera controls, using Flex/Actionscript, including pan/tilt/zoom, presets, privacy mode and audio paging to an existing web application
+  \item Defined a C\# interface, called by a flash application, to control cameras using a custom AMX/Crestron Protocol
+  \item Implemented, a protocol in C\# to add pan/tilt/zoom, preset, and privacy commands for Axis IP cameras using their VAPIX API
+    \skills{C\#, Flex, Actionscript, SVN, Visual Studio, Intellij}
+  \end{resitem}
+  \begin{resitem}{Innermost Labs}{Waltham, MA}{April 2012-September 2012}{Developer}
+  \item Created an Android application for the Rootscamp 2012 Conference using HTML/Javascript and Trigger.io
+  \item Added map functionality allowing users to locate fellow conference attendees  using the Google Maps Javascript API
+    \skills{Javascript, Git, Firebase, Trigger.io}
+  \end{resitem}
+\end{ressection}
 \reseducation{Brandeis University}{May 2014}{3.39}{Bachelors of Science Computer Science, Mathematics}{Theater Arts, Latin}{Dean's List Fall 2010, Fall 2013}
-\begin{resclasses}
+\begin{reslist}{Relevent Classes}
 \item Linear Algebra
 \item Data Structures and Algorithms
 \item Discrete Structures
@@ -106,35 +124,5 @@
 \item Computer System Design
 \item Introduction to Programming Language Theory
 \item Distributed Systems
-\end{resclasses}
-\begin{ressection}{Experience}
-  \begin {resitem}{B-Line Medical}{Washington, D.C.}{July 2014-Present}{Software Engineer} 
-  \item Implemented bilinear image resizing and  bug fixes in a C++ live video recording and streaming application
-  \item Fixed bugs and otherwise maintained exisiting C\# web backend 
-  \item Attended the IMSH (medical simulation conference) representing the engineering team and presenting google glass produce to current and potential clients
-    \skills{Agile, Git \& SVN, C\#, C++, Actionscript/Flex, SQL, Direct Show}
-  \end{resitem}
-  \begin{resitem}{Library and Technology Services}{Brandeis University- Waltham, MA}{May 2011-May 2014}{Helpdesk Technician} 
-  \item Provided phone, walk-up and on-site support for the students, faculty, and staff of Brandeis University
-  \item Supported Google Apps products, shared Windows drives, network access, antivirus, and general software support 
-    \skills{Operating Systems Windows, Mac, Linux \textsl{(Arch)}}
-  \end{resitem}
-  \begin{resitem}{B-Line Medical}{Washington, D.C.}{June 2013-August 2013}{Software Development Intern}
-  \item Devloped a User Interface for camera controls, using Flex/Actionscript, including pan/tilt/zoom, presets, privacy mode and audio paging to an existing web application
-  \item Defined a C\# interface, called by a flash application, to control cameras using a custom AMX/Cresteron Protocol
-  \item Implemented, in C\#, a protocol to add pan/tilt/zoom, preset, and privacy commands for Axis IP cameras using their VAPIX API
-    \skills{C\#, Flex, Actionscript, SVN, Visual Studio, Intellij}
-  \end{resitem}
-  \begin{resitem}{Innermost Labs}{Waltham, MA}{April 2012-September 2012}{Developer}
-  \item Created an Android application for the Rootscamp 2012 Conference using HTML/Javascript and Trigger.io
-  \item Added map functionality allowing users to locate fellow conference attendees  using the Google Maps Javascript API
-    \skills{Javascript, Git, Firebase, Trigger.io}
-  \end{resitem}
-\end{ressection}
-\begin{ressection}{Leadership Experience}
-  \begin{resitem}{Brandeis Emergency Medical Corps}{Waltham, MA}{September 2011-Present}{Director of Special Operations, EMT-Basic}
-  \item Provide volunteer emergency medical service at the EMT-Basic level to approximately 5,000 members of the Brandeis Community
-  \item Maintain the BEMCo website, organize EMT coverage for on campus events, and customize the MATRIS online Patient Care Report service for BEMCo specific requirements
-  \end{resitem}
-\end{ressection}
+\end{reslist}
 \end{document}
